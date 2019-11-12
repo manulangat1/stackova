@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <section>
+        {% load static %}
+        <h1>hey</h1>
+        <form  action="{%url 'index'%}" method="post">
+                {%csrf_token%}
+                {{ form  }}
+                <input type="submit" value="Subscribe">
+              </form>
+        {% for city in city_weather %}
+          <h2>{{city.city}}</h2>
+          <p>{{city.temprature}}</p>
+          <!-- <p>{{city.description}</p> -->
+          {% endfor %}
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
